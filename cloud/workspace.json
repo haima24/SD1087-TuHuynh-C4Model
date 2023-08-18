@@ -1,0 +1,795 @@
+{
+  "id" : 1,
+  "name" : "Name",
+  "description" : "Description",
+  "lastModifiedDate" : "2023-08-18T13:01:52Z",
+  "lastModifiedAgent" : "structurizr-javascript",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIGV4dGVuZHMgLi4vbW9kZWxzLmRzbCB7CiAgICBtb2RlbCB7ICAgICAgICAgIAogICAgfQogICAgdmlld3MgewogICAgfQp9Cg=="
+  },
+  "configuration" : { },
+  "model" : {
+    "people" : [ {
+      "id" : "2",
+      "tags" : "Element,Person,User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "authorizeduser"
+      },
+      "name" : "Authorized User",
+      "description" : "A registered user of the bookstore, with personal account",
+      "relationships" : [ {
+        "id" : "22",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "b4b5b96e-c62c-4e91-9a09-76c9a7ea5f0d"
+        },
+        "sourceId" : "2",
+        "destinationId" : "4",
+        "description" : "Search book with more details, buy books"
+      }, {
+        "id" : "41",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ded07b0d-2663-45da-bef5-9ee0968dd03f"
+        },
+        "sourceId" : "2",
+        "destinationId" : "16",
+        "description" : "Search, view books with more detail",
+        "technology" : "JSON/HTTPS"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "3",
+      "tags" : "Element,Person,User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "internaluser"
+      },
+      "name" : "Internal User",
+      "description" : "An administrator of the bookstore, a back-office worker",
+      "relationships" : [ {
+        "id" : "27",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "2ef567c9-4861-4c1e-b112-c00ebc0d4113"
+        },
+        "sourceId" : "3",
+        "destinationId" : "17",
+        "description" : "Administrate books and their details",
+        "technology" : "JSON/HTTPS"
+      }, {
+        "id" : "23",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "2c9a046c-7c8e-4ceb-a15d-be13060b3a33"
+        },
+        "sourceId" : "3",
+        "destinationId" : "4",
+        "description" : "Search book with more details, administrate books and their details"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "1",
+      "tags" : "Element,Person,User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "publicuser"
+      },
+      "name" : "Public User",
+      "description" : "An anonymous user of the bookstore",
+      "relationships" : [ {
+        "id" : "21",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "92015f78-6560-49ca-95f6-68befe501d8a"
+        },
+        "sourceId" : "1",
+        "destinationId" : "4",
+        "description" : "View book information"
+      }, {
+        "id" : "40",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "b518bb39-0b76-4c81-885c-c0df29f95f0e"
+        },
+        "sourceId" : "1",
+        "destinationId" : "16",
+        "description" : "Search, view books",
+        "technology" : "JSON/HTTPS"
+      } ],
+      "location" : "Unspecified"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "19",
+      "tags" : "Element,Software System,External System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "publishersystem"
+      },
+      "name" : "Publisher System",
+      "description" : "The 3rd party system of publishers that gives details about books published by them",
+      "relationships" : [ {
+        "id" : "25",
+        "tags" : "Relationship,Async Request",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f5545ffe-1111-409e-aa36-3c66c8db353e"
+        },
+        "sourceId" : "19",
+        "destinationId" : "4",
+        "description" : "Published book details"
+      }, {
+        "id" : "42",
+        "tags" : "Relationship,Async Request",
+        "properties" : {
+          "structurizr.dsl.identifier" : "7aeec1e4-d119-4f0c-9273-6516e0d87b48"
+        },
+        "sourceId" : "19",
+        "destinationId" : "15",
+        "description" : "Consume book publication update events"
+      } ],
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "18",
+      "tags" : "Element,Software System,External System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "authsystem"
+      },
+      "name" : "Identity Provider System",
+      "description" : "The external Identiy Provider Platform",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "4",
+      "tags" : "Element,Software System,Target System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bookstoresystem"
+      },
+      "name" : "Bookstore System",
+      "description" : "Allows users to view about book, and administrate the book details",
+      "relationships" : [ {
+        "id" : "24",
+        "tags" : "Relationship",
+        "properties" : {
+          "structurizr.dsl.identifier" : "489a5c93-dfce-4b88-a4db-39a2d7adc7a4"
+        },
+        "sourceId" : "4",
+        "destinationId" : "18",
+        "description" : "Register new user, and authorize user access"
+      }, {
+        "id" : "26",
+        "tags" : "Relationship,Async Request",
+        "properties" : {
+          "structurizr.dsl.identifier" : "c2a61b6c-1cec-496b-b086-35da1bd4effd"
+        },
+        "sourceId" : "4",
+        "destinationId" : "20",
+        "description" : "Transfer book orders, book delivery details"
+      } ],
+      "location" : "Unspecified",
+      "containers" : [ {
+        "id" : "6",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "adminwebapi"
+        },
+        "name" : "Admin Web API",
+        "description" : "Allows only authorized users administering books details via HTTPS API",
+        "relationships" : [ {
+          "id" : "34",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5ed2d335-615d-407e-8bcb-79075d68318d"
+          },
+          "sourceId" : "6",
+          "destinationId" : "18",
+          "description" : "Authorize user",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "id" : "35",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ddd63240-28da-4b20-b15d-c929b15d2dc7"
+          },
+          "sourceId" : "6",
+          "destinationId" : "12",
+          "description" : "Reads/Write book detail data",
+          "technology" : "ODBC"
+        }, {
+          "id" : "36",
+          "tags" : "Relationship,Async Request",
+          "properties" : {
+            "structurizr.dsl.identifier" : "2245b573-abbb-4b39-9c5f-366754856bd3"
+          },
+          "sourceId" : "6",
+          "destinationId" : "13",
+          "description" : "Publish book update events"
+        } ],
+        "technology" : "Go",
+        "components" : [ {
+          "id" : "7",
+          "tags" : "Element,Component",
+          "properties" : {
+            "structurizr.dsl.identifier" : "bookservice"
+          },
+          "name" : "Book Service",
+          "description" : "Allows administrating book details",
+          "relationships" : [ {
+            "id" : "45",
+            "tags" : "Relationship",
+            "properties" : {
+              "structurizr.dsl.identifier" : "5fc22d55-4307-4749-8ec6-e11eea0e6974"
+            },
+            "sourceId" : "7",
+            "destinationId" : "8",
+            "description" : "Uses"
+          }, {
+            "id" : "46",
+            "tags" : "Relationship",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f6b20260-6097-4c0d-884f-223c32487839"
+            },
+            "sourceId" : "7",
+            "destinationId" : "9",
+            "description" : "Uses"
+          }, {
+            "id" : "48",
+            "tags" : "Relationship",
+            "properties" : {
+              "structurizr.dsl.identifier" : "99d8ba9f-3b77-4013-b4dc-93511b0fe79b"
+            },
+            "sourceId" : "7",
+            "destinationId" : "12",
+            "description" : "Read/Write data",
+            "technology" : "ODBC"
+          } ],
+          "technology" : "Go",
+          "documentation" : { }
+        }, {
+          "id" : "9",
+          "tags" : "Element,Component",
+          "properties" : {
+            "structurizr.dsl.identifier" : "bookeventpublisher"
+          },
+          "name" : "Book Events Publisher",
+          "description" : "Publishes books-related events to Events Publisher",
+          "relationships" : [ {
+            "id" : "49",
+            "tags" : "Relationship",
+            "properties" : {
+              "structurizr.dsl.identifier" : "90b8e68c-9514-4005-8795-e26755e03316"
+            },
+            "sourceId" : "9",
+            "destinationId" : "13",
+            "description" : "Publish book update events"
+          } ],
+          "technology" : "Go",
+          "documentation" : { }
+        }, {
+          "id" : "8",
+          "tags" : "Element,Component",
+          "properties" : {
+            "structurizr.dsl.identifier" : "authservice"
+          },
+          "name" : "Authorizer",
+          "description" : "Authorize users by using external Authorization System",
+          "relationships" : [ {
+            "id" : "47",
+            "tags" : "Relationship",
+            "properties" : {
+              "structurizr.dsl.identifier" : "fb003215-e22f-4034-8adb-a516deeccadf"
+            },
+            "sourceId" : "8",
+            "destinationId" : "18",
+            "description" : "Authorize user permissions",
+            "technology" : "JSON/HTTPS"
+          } ],
+          "technology" : "Go",
+          "documentation" : { }
+        } ],
+        "documentation" : { }
+      }, {
+        "id" : "15",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "publisherrecurrentupdater"
+        },
+        "name" : "Publisher Recurrent Updater",
+        "description" : "Listening to external events from Publisher System, and update book information",
+        "relationships" : [ {
+          "id" : "39",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "083f1ec3-8106-4040-8649-f104a70f6412"
+          },
+          "sourceId" : "15",
+          "destinationId" : "6",
+          "description" : "Makes API calls to",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "id" : "44",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "620d3e0e-9db6-4579-a435-aad590521857"
+          },
+          "sourceId" : "15",
+          "destinationId" : "7",
+          "description" : "Makes API calls to",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "technology" : "Go",
+        "documentation" : { }
+      }, {
+        "id" : "16",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "frontstoreapplication"
+        },
+        "name" : "Front-store Application",
+        "description" : "Provide all the bookstore functionalities to both public and authorized users",
+        "relationships" : [ {
+          "id" : "28",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9637dc11-b58c-4144-a043-54ce63e3fd6e"
+          },
+          "sourceId" : "16",
+          "destinationId" : "10",
+          "description" : "Allow public user to view book information",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "id" : "30",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "62190fa2-3a4f-4c39-b682-e937a6aca818"
+          },
+          "sourceId" : "16",
+          "destinationId" : "5",
+          "description" : "Only allow authorized User to search book with more details",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "technology" : "JavaScript & ReactJS",
+        "documentation" : { }
+      }, {
+        "id" : "5",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "searchwebapi"
+        },
+        "name" : "Search Web API",
+        "description" : "Allows only authorized users searching books records via HTTPS API",
+        "relationships" : [ {
+          "id" : "32",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c1e2127f-ea84-4d9d-a7ed-22333446e57d"
+          },
+          "sourceId" : "5",
+          "destinationId" : "11",
+          "description" : "Retrieve book search data",
+          "technology" : "ODBC"
+        }, {
+          "id" : "31",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5a340ff3-c77d-4a87-a6e7-f8ac5c99cd23"
+          },
+          "sourceId" : "5",
+          "destinationId" : "18",
+          "description" : "Authorize user",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "technology" : "Go",
+        "documentation" : { }
+      }, {
+        "id" : "10",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "publicwebapi"
+        },
+        "name" : "Public Web API",
+        "description" : "Allows public users getting books information",
+        "relationships" : [ {
+          "id" : "29",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6ca8b7ca-cafb-4699-bb8b-f94b786209d6"
+          },
+          "sourceId" : "10",
+          "destinationId" : "11",
+          "description" : "Retrieve book search data",
+          "technology" : "ODBC"
+        } ],
+        "technology" : "Go",
+        "documentation" : { }
+      }, {
+        "id" : "14",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bookeventconsumer"
+        },
+        "name" : "Book Event Consumer",
+        "description" : "Listening to domain events and write publisher to Search Database for updating",
+        "relationships" : [ {
+          "id" : "38",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9f05ccc4-2f5b-4aac-a8d6-e8c4d3a116bf"
+          },
+          "sourceId" : "14",
+          "destinationId" : "11",
+          "description" : "Write book search data",
+          "technology" : "ODBC"
+        } ],
+        "technology" : "Go",
+        "documentation" : { }
+      }, {
+        "id" : "12",
+        "tags" : "Element,Container,Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bookstoredatabase"
+        },
+        "name" : "Bookstore Database",
+        "description" : "Stores book details",
+        "technology" : "PostgreSQL",
+        "documentation" : { }
+      }, {
+        "id" : "17",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "backofficeapplication"
+        },
+        "name" : "Back-Office Application",
+        "description" : "Provide all the bookstore administration functionalities to internal users",
+        "relationships" : [ {
+          "id" : "43",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c5d14df1-dcdc-4292-89db-2f752cd4ee33"
+          },
+          "sourceId" : "17",
+          "destinationId" : "7",
+          "description" : "Administrate book details",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "id" : "33",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6baacd46-dcec-4990-a02c-fc9eb7c8253c"
+          },
+          "sourceId" : "17",
+          "destinationId" : "6",
+          "description" : "Administrate books and their details",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "technology" : "JavaScript & ReactJS",
+        "documentation" : { }
+      }, {
+        "id" : "11",
+        "tags" : "Element,Container,Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "searchdatabase"
+        },
+        "name" : "Search Database",
+        "description" : "Stores searchable book information",
+        "technology" : "ElasticSearch",
+        "documentation" : { }
+      }, {
+        "id" : "13",
+        "tags" : "Element,Container",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bookeventstream"
+        },
+        "name" : "Book Event Stream",
+        "description" : "Handles book-related domain events",
+        "relationships" : [ {
+          "id" : "37",
+          "tags" : "Relationship",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dd063de9-2cae-4506-8ad7-761db57c0ac5"
+          },
+          "sourceId" : "13",
+          "destinationId" : "14",
+          "description" : "Consume book update events"
+        } ],
+        "technology" : "Apache Kafka 3.0",
+        "documentation" : { }
+      } ],
+      "documentation" : { }
+    }, {
+      "id" : "20",
+      "tags" : "Element,Software System,External System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "shippingsystem"
+      },
+      "name" : "Shipping System",
+      "description" : "The 3rd party system that handle book delivery",
+      "location" : "Unspecified",
+      "documentation" : { }
+    } ]
+  },
+  "documentation" : { },
+  "views" : {
+    "systemContextViews" : [ {
+      "key" : "SystemContext",
+      "order" : 1,
+      "softwareSystemId" : "4",
+      "paperSize" : "A4_Portrait",
+      "dimensions" : {
+        "width" : 2366,
+        "height" : 2816
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "1",
+        "x" : 233,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 233,
+        "y" : 1508
+      }, {
+        "id" : "3",
+        "x" : 233,
+        "y" : 2208
+      }, {
+        "id" : "4",
+        "x" : 958,
+        "y" : 1233
+      }, {
+        "id" : "18",
+        "x" : 1708,
+        "y" : 933
+      }, {
+        "id" : "19",
+        "x" : 208,
+        "y" : 908
+      }, {
+        "id" : "20",
+        "x" : 1708,
+        "y" : 1533
+      } ],
+      "relationships" : [ {
+        "id" : "26"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "24"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "22"
+      }, {
+        "id" : "21"
+      } ]
+    } ],
+    "containerViews" : [ {
+      "key" : "Containers",
+      "order" : 2,
+      "softwareSystemId" : "4",
+      "dimensions" : {
+        "width" : 4620,
+        "height" : 3763
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "externalSoftwareSystemBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "11",
+        "x" : 3950,
+        "y" : 2108
+      }, {
+        "id" : "12",
+        "x" : 2450,
+        "y" : 2108
+      }, {
+        "id" : "13",
+        "x" : 2450,
+        "y" : 2708
+      }, {
+        "id" : "14",
+        "x" : 3200,
+        "y" : 2708
+      }, {
+        "id" : "15",
+        "x" : 950,
+        "y" : 2083
+      }, {
+        "id" : "16",
+        "x" : 2450,
+        "y" : 1508
+      }, {
+        "id" : "17",
+        "x" : 950,
+        "y" : 2708
+      }, {
+        "id" : "18",
+        "x" : 3950,
+        "y" : 3262
+      }, {
+        "id" : "19",
+        "x" : 200,
+        "y" : 2070
+      }, {
+        "id" : "1",
+        "x" : 1725,
+        "y" : 199
+      }, {
+        "id" : "2",
+        "x" : 1725,
+        "y" : 899
+      }, {
+        "id" : "3",
+        "x" : 225,
+        "y" : 2670
+      }, {
+        "id" : "5",
+        "x" : 3200,
+        "y" : 2108
+      }, {
+        "id" : "6",
+        "x" : 1700,
+        "y" : 2708
+      }, {
+        "id" : "10",
+        "x" : 3200,
+        "y" : 1508
+      } ],
+      "relationships" : [ {
+        "id" : "40",
+        "vertices" : [ {
+          "x" : 2150,
+          "y" : 749
+        } ]
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "31",
+        "vertices" : [ {
+          "x" : 3650,
+          "y" : 2558
+        }, {
+          "x" : 3950,
+          "y" : 3187
+        } ]
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "34",
+        "vertices" : [ {
+          "x" : 2450,
+          "y" : 3158
+        } ]
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      } ]
+    } ],
+    "componentViews" : [ {
+      "key" : "Components",
+      "order" : 3,
+      "dimensions" : {
+        "width" : 3100,
+        "height" : 1920
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "containerId" : "6",
+      "externalContainerBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "12",
+        "x" : 1699,
+        "y" : 1420
+      }, {
+        "id" : "13",
+        "x" : 2449,
+        "y" : 820
+      }, {
+        "id" : "15",
+        "x" : 199,
+        "y" : 520
+      }, {
+        "id" : "17",
+        "x" : 199,
+        "y" : 1120
+      }, {
+        "id" : "7",
+        "x" : 949,
+        "y" : 820
+      }, {
+        "id" : "18",
+        "x" : 2449,
+        "y" : 220
+      }, {
+        "id" : "8",
+        "x" : 1699,
+        "y" : 220
+      }, {
+        "id" : "9",
+        "x" : 1699,
+        "y" : 820
+      } ],
+      "relationships" : [ {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "tag" : "Customer",
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "fontSize" : 22,
+          "shape" : "Person"
+        }, {
+          "tag" : "External System",
+          "background" : "#999999",
+          "color" : "#ffffff"
+        }, {
+          "tag" : "Database",
+          "shape" : "Cylinder"
+        } ],
+        "relationships" : [ {
+          "tag" : "Relationship",
+          "dashed" : false
+        }, {
+          "tag" : "Async Request",
+          "dashed" : true
+        } ]
+      },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ],
+      "terminology" : { },
+      "metadataSymbols" : "SquareBrackets",
+      "lastSavedView" : "Components"
+    }
+  }
+}
